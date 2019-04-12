@@ -1,0 +1,17 @@
+{{- define "database" -}}
+{{- if .Values.database.enabled -}}
+- name: POSTGRES_DB_HOST
+  value: {{ .Release.Name }}-postgresql
+- name: POSTGRES_DB_PORT
+  value: {{ printf "%d" 5432 | quote }}
+- name: POSTGRES_DB_DATABASE
+  value: {{ .Values.postgresql.postgresqlDatabase }}
+- name: POSTGRES_DB_SCHEMA
+  value: {{ .Values.postgresql.postgresqlSchema }}
+- name: POSTGRES_DB_USER
+  value: {{ .Values.postgresql.postgresqlUsername }}
+- name: POSTGRES_DB_PASSWORD
+  value: {{ .Values.postgresql.postgresqlPassword }}
+{{- end }}
+{{- end -}}
+
