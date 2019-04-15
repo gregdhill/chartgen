@@ -1,4 +1,4 @@
-module chartgen
+module github.com/gregdhill/tools/helm-chart
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect

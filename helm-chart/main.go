@@ -27,7 +27,7 @@ var opts struct {
 func main() {
 	_, err := flags.ParseArgs(&opts, os.Args[1:])
 	if err != nil {
-		log.Fatal(err)
+		os.Exit(1)
 	}
 
 	meta := chart.Metadata{
